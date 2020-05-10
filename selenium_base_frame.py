@@ -40,8 +40,8 @@ action.key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
 
 # go to VK and make new post
 driver.get('https://vk.com/id...')  # put your VK ID
-driver.find_element_by_id('quick_email').send_keys(number)
-driver.find_element_by_id('quick_pass').send_keys(password)
+driver.find_element_by_id('quick_email').send_keys(vk_number)
+driver.find_element_by_id('quick_pass').send_keys(vk_password)
 driver.find_element_by_id('quick_login_button').click()
 
 wait = WebDriverWait(driver, 5)
