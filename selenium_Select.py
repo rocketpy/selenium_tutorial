@@ -1,3 +1,4 @@
+# https://selenium-python.readthedocs.io/navigating.html
 import pandas as pd
 from time import sleep
 from selenium import webdriver
