@@ -42,3 +42,23 @@ webdriver.DesiredCapabilities.FIREFOX['proxy']={
 }
 driver = webdriver.Firefox()
 driver.get('http://www.whatsmyip.org/')
+
+#  or
+
+from selenium import webdriver
+from selenium.webdriver.common.proxy import Proxy, ProxyType
+
+
+prox = Proxy()
+prox.proxy_type = ProxyType.MANUAL
+prox.http_proxy = “0.0.0.0:00000”
+prox.socks_proxy = “0.0.0.0:00000”
+prox.ssl_proxy = “0.0.0.0:00000”
+
+capabilities = webdriver.DesiredCapabilities.CHROME
+prox.add_to_capabilities(capabilities)
+
+driver = webdriver.Chrome(executable_path='/usr/local/share chromedriver',desired_capabilities=capabilities)
+
+#  verifying proxy 
+driver.get("http://www.whatsmyip.org/")
