@@ -24,3 +24,21 @@ capabilities = webdriver.DesiredCapabilities.CHROME
 prox.add_to_capabilities(capabilities)
 
 driver = webdriver.Chrome(desired_capabilities=capabilities)
+
+
+# or
+
+from selenium import webdriver
+
+
+PROXY = "12.345.678.910:8080"
+webdriver.DesiredCapabilities.FIREFOX['proxy']={
+    "httpProxy":PROXY,
+    "ftpProxy":PROXY,
+    "sslProxy":PROXY,
+    "noProxy":None,
+    "proxyType":"MANUAL",
+    "autodetect":False
+}
+driver = webdriver.Firefox()
+driver.get('http://www.whatsmyip.org/')
