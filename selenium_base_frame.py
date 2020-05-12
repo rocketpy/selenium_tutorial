@@ -10,6 +10,12 @@ from selenium.webdriver.support import expected_conditions as EC
 
 path = "C:\Program Files\chromedriver.exe"  # or  r"C:\Program Files\chromedriver.exe"
 
+#  good practice use PROXY for GOOGLE or YANDEX search !!!
+proxy = "12.345.678.910:8080"
+options = WebDriverWait.ChromeOptions()
+options.add_argument('--proxy-server=%s' % proxy)
+chrome = webdriver.Chrome(chrome_options=options)
+
 driver = webdriver.Chrome(path)  # or  webdriver.Chrome(executable_path=path)
 #driver.get("https:// ... ")
 
