@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 
 
-path = "C:\Program Files\chromedriver.exe"  # or  r"C:\Program Files\chromedriver.exe"
+path = "C:\Program Files\chromedriver.exe"  # or , for PyCharm use:  r"C:\Program Files\chromedriver.exe"
 
 #  good practice use PROXY for GOOGLE or YANDEX search !!!
 proxy = "12.345.678.910:8080"
@@ -19,13 +19,17 @@ chrome = webdriver.Chrome(chrome_options=options)
 driver = webdriver.Chrome(path)  # or  webdriver.Chrome(executable_path=path)
 #driver.get("https:// ... ")
 
+# add your ID and password for VK account
 vk_number = ""
 vk_password = ""
 
 driver.get('https://yandex.ru')
-search = driver.find_element_by_id('text')
+search = driver.find_element_by_id('text')  # input id_name 
+time.sleep(1)  # use sleep , for simulation user actions
 search.send_keys('Kate Middleton')  #  she is so cute and beautiful ))
+time.sleep(1)
 search.send_keys(Keys.ENTER)
+time.sleep(1)
 driver.find_element_by_partial_link_text('Картинки').click()
 
 tabs = driver.window_handles  # a list
