@@ -25,7 +25,7 @@ vk_password = ""
 
 driver.get('https://yandex.ru')
 search = driver.find_element_by_id('text')  # input id_name 
-time.sleep(1)  # use sleep , for simulation user actions
+time.sleep(1)  # use sleep , for simulation of user actions
 search.send_keys('Kate Middleton')  #  she is so cute and beautiful ))
 time.sleep(1)
 search.send_keys(Keys.ENTER)  # ENTER , it's a button at keyboard
@@ -37,17 +37,20 @@ tabs = driver.window_handles  # get a list of opened tabs
 
 driver.switch_to.window(tabs[1])  # change window to second opened tab !!!
 
-imgs = driver.find_elements_by_class_name('serp-item__link')  # get a list of elements
-img_link = imgs[1].get_attribute('href')  # get href of img
+imgs = driver.find_elements_by_class_name('class_name')  # get a list of elements , class_name: serp-item__link
+img_link = imgs[1].get_attribute('href')  # get href of second img , attribute of tag <a>
 driver.get(img_link)  # go to this link
 
-wait = WebDriverWait(driver, 10)
+wait = WebDriverWait(driver, 5)  # 5 seconds for download a button on the page !!!
+
 element = wait.until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, 'Открыть')))
 # driver.find_element_by_partial_link_text('Открыть').click()  #  need check !!!
 element.click()
-tabs1 = driver.window_handles
-driver.switch_to.window(tabs1[2])
 
+new_tab = driver.window_handles  # again get a list opened tabs
+driver.switch_to.window(new_tab[2])  # change window to next tab
+
+# for copy img to computer memory (like  CTRL+C  buttons)
 action = ActionChains(driver)
 action.key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
 
@@ -57,13 +60,14 @@ driver.find_element_by_id('quick_email').send_keys(vk_number)
 driver.find_element_by_id('quick_pass').send_keys(vk_password)
 driver.find_element_by_id('quick_login_button').click()
 
-wait = WebDriverWait(driver, 5)
+wait = WebDriverWait(driver, 5)  # 5 sec for download a field for new posts
 
 elem = wait.until(EC.visibility_of_element_located((By.ID, 'post_field')))
-elem.clear()
-elem.send_keys('Text of message')
-action.key_down(Keys.CONTROL).send_keys('v').key_up(Keys.CONTROL).perform()
+elem.clear()  # clean field before send a new text
+elem.send_keys('Text of message')  # Text for new post
+action.key_down(Keys.CONTROL).send_keys('v').key_up(Keys.CONTROL).perform()  # for input our img 
 
-time.sleep(5)
-driver.find_element_by_xpath('//*[@id="send_post"]').click()
+time.sleep(5)  # wait for download a img
+driver.find_element_by_xpath('//*[@id="send_post"]').click()  # click button for publish a new post
+
 driver.quit()
