@@ -11,11 +11,12 @@ time.sleep(3)
 driver.close()  # driver.quit()
 
 #  or
-
-
+driver.execute_script("window.scrollTo(0, Y)")  #  Y  is a heught
 
 #  or
-
+label.sendKeys(Keys.PAGE_DOWN
+               
+#  or
 from selenium.webdriver.common.keys import Keys
 
 html = driver.find_element_by_tag_name('html')
