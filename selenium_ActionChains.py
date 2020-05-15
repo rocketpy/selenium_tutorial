@@ -40,9 +40,16 @@ actionChains.move_to_element(element).perform()
 wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Some_name"))).click()  
     
     
-#  or
+#  or , ActionChains can be used in a chain
 menu = driver.find_element_by_css_selector(".nav")
 hidden_submenu = driver.find_element_by_css_selector(".nav #submenu1")
-
 ActionChains(driver).move_to_element(menu).click(hidden_submenu).perform()
 
+
+#  or , actions can be queued up one by one
+menu = driver.find_element_by_css_selector(".nav")
+hidden_submenu = driver.find_element_by_css_selector(".nav #submenu1")
+actions = ActionChains(driver)
+actions.move_to_element(menu)
+actions.click(hidden_submenu)
+actions.perform()
