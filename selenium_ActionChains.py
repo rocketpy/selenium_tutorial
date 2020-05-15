@@ -29,8 +29,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC 
 from selenium.webdriver.common.action_chains import ActionChains
   
-
-driver.get("http://www.")  
+    
+path = "C:\\chromedriver.exe" 
+driver = webdriver.Chrome(path)   
+driver.get("http://www ... ")  
 wait = WebDriverWait(driver, 40)
 driver.find_element_by_css_selector("span .... ").click()
 wait.until(EC.element_to_be_clickable((By.XPATH, " ... "))).click()
@@ -41,15 +43,15 @@ wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Some_name"))).click()
     
     
 #  or , ActionChains can be used in a chain
-menu = driver.find_element_by_css_selector(".nav")
-hidden_submenu = driver.find_element_by_css_selector(".nav #submenu1")
-ActionChains(driver).move_to_element(menu).click(hidden_submenu).perform()
+menu = driver.find_element_by_css_selector("")
+submenu = driver.find_element_by_css_selector("")
+ActionChains(driver).move_to_element(menu).click(submenu).perform()
 
 
 #  or , actions can be queued up one by one
-menu = driver.find_element_by_css_selector(".nav")
-hidden_submenu = driver.find_element_by_css_selector(".nav #submenu1")
+menu = driver.find_element_by_css_selector("")
+submenu = driver.find_element_by_css_selector("")
 actions = ActionChains(driver)
 actions.move_to_element(menu)
-actions.click(hidden_submenu)
+actions.click(submenu)
 actions.perform()
