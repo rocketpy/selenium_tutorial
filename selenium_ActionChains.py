@@ -29,3 +29,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC 
 from selenium.webdriver.common.action_chains import ActionChains
   
+
+driver.get("http://www.")  
+wait = WebDriverWait(driver, 40)
+driver.find_element_by_css_selector("span .... ").click()
+wait.until(EC.element_to_be_clickable((By.XPATH, " ... "))).click()
+element = driver.find_element_by_link_text('Some_text')
+actionChains = ActionChains(driver)
+actionChains.move_to_element(element).perform()
+wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Some_name"))).click()  
+    
