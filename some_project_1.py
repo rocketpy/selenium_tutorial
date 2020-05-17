@@ -39,4 +39,10 @@ def auth_fb():
         sleep(2)
         driver.find_element_by_id("u_0_b").click()
         
+        if driver.find_element_by_id("pass"):
+            print("Authorization not done ! , repeat again")
+            auth_fb()
+    except NoSuchElementException:
+        print("Authorization is done !")
+        
     
