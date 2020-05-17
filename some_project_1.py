@@ -1,5 +1,4 @@
 import os
-import requests
 from time import sleep
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -14,7 +13,7 @@ PATH = "C:\Program Files\chromedriver.exe"
 PROXY = "12.345.678.910:8080"
 options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
-chrome = webdriver.Chrome(chrome_options=options)
+chrome = webdriver.Chrome(chrome_options=options)  # Firefox()
 #driver = webdriver.Chrome(PATH) 
 LOGIN_FB = ""
 PASSWORD_FB = ""
@@ -67,7 +66,21 @@ def get_html():
         last_height = new_height
 
  
-def parse_url()"
+def parse_url():
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')  # 'lxml' 
+    quant = 0
+    
+    for elem in soup.select("._60ri")
+        link = elem.find("a")
+        quant += 1
+        print(f"{quant} {link.get{'href'}}")
+              
+        with open (f'1.txt', '+a') as file:
+            file.write(f"{link.get('href')}\n")
+        
 
+if __name__ == '__main__':
+    auth_fb()
+    get_html()
+    parse_url()
