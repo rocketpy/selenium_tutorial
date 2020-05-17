@@ -1,5 +1,7 @@
 import os
+import requests
 from time import sleep
+from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -64,5 +66,8 @@ def get_html():
             break
         last_height = new_height
 
-        
-        
+ 
+def parse_url()"
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')  # 'lxml' 
+
