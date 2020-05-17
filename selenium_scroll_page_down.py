@@ -4,7 +4,7 @@ from time import sleep
 
 driver = webdriver.Firefox()
 driver.get("https:// ...  ")
-driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")  # scroll down the complete page height or a specific height !!!
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")  # scroll down the complete page height or a specific height !!!
 time.sleep(3)
 driver.close()  # driver.quit()
 
