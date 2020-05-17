@@ -49,10 +49,20 @@ def auth_fb():
 def get_html():
     driver.get(url)  # url of a group in FB
     sleep(5)
-    driver.find_element_by_xpath("").click()
+    driver.find_element_by_xpath("/html/body/div[1]/div[3]/div[1]/div/div[2]/div[1]/div/div/div/div[2]/div[3]/a").click()
     sleep(5)
     
     time_scroll = 5
-    last_height = driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")  # scroll down a page
+    last_height = driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")  # scroll down a page
     
-    
+    while True:
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+        sleep(time_scroll)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            print("Scroll is done !")
+            break
+        last_height = new_height
+
+        
+        
