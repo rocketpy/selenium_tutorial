@@ -46,3 +46,13 @@ def auth_fb():
         print("Authorization is done !")
         
     
+def get_html():
+    driver.get(url)  # url of a group in FB
+    sleep(5)
+    driver.find_element_by_xpath("").click()
+    sleep(5)
+    
+    time_scroll = 5
+    last_height = driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")  # scroll down a page
+    
+    
