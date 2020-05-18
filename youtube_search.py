@@ -17,10 +17,10 @@ chrome = webdriver.Chrome(chrome_options=options)  # Firefox()
 #driver = webdriver.Chrome(PATH) 
 driver.get("https://youtube.com")
 
-search = driver.find_element_by_xpath("...")  # input field 
+search = driver.find_element_by_xpath("//*[@id="search"]")  # input field 
 search.send_keys("some_word")
 
-search_button = driver.find_element_by_xpath("...")  # button of search field
+search_button = driver.find_element_by_xpath("//*[@id="search-icon-legacy"]")  # button of search field
 search_button.click()
 
-driver.quit()
+#driver.quit()
