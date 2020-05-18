@@ -9,8 +9,12 @@ from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.webdriver.support import expected_conditions as EC
 
 
-path = "C:\Program Files\chromedriver.exe" 
-driver = webdriver.Chrome(path) 
+PATH = "C:\Program Files\chromedriver.exe"  
+PROXY = "12.345.678.910:8080"
+options = WebDriverWait.ChromeOptions()
+options.add_argument('--proxy-server=%s' % PROXY)
+chrome = webdriver.Chrome(chrome_options=options)  # Firefox()
+#driver = webdriver.Chrome(PATH) 
 driver.get("https://youtube.com")
 
 search = driver.find_element_by_xpath("...")  # input field 
