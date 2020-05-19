@@ -9,14 +9,18 @@ from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.webdriver.support import expected_conditions as EC
 
 
-PATH = "C:\Program Files\chromedriver.exe"  
+#PATH = "C:\Program Files\chromedriver.exe"  
 PROXY = "12.345.678.910:8080"
 options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)  # Firefox()
+url = input("Link a group : ")
+LOGIN_FB = input("Login to FB : ")
+PASSWORD = input("Password : ")
+
 #driver = webdriver.Chrome(PATH) 
-LOGIN_FB = ""
-PASSWORD_FB = ""
+#LOGIN_FB = ""
+#PASSWORD_FB = ""
 
 """
 proxy = Proxy()
