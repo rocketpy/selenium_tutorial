@@ -14,15 +14,18 @@ from selenium.webdriver.support import expected_conditions as EC
 #driver.get("https:// ... ")
 
 URL = "https:// "
+quant_pages = []
 
 with requests.Session() as se:
     se.headers = {"User-Agent": " ",  # insert any User-agent !
                  "Accept-Language": "en"
                  }
     response = se.get(URL)
-    
+
 soup = BeautifulSoup(response.content, "html.parser")
 pages = int(input("Input quants a pages : "))
-quant_pages = []
 category = input("Input a category : ")
 
+for i in range(1, pages + 1):
+    sleep(3)
+    srt = quant_pages.append(se.get(f'https://.../{category}/?page=' + str(i)))
