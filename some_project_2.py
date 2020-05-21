@@ -33,3 +33,13 @@ for i in range(1, pages + 1):
 for srt in quant_pages:
     soup = BeautifulSoup(srt.content, "html.parser")
     
+    for elem in soup.select("some_link"):
+        link = elem.find("a")
+        try:
+            with open(f'{category}.txt' "+a") as fil):  # write data to txt file
+                file.write(f'{link.get("href")}\n')
+        except AttributeError as error:
+            print(f'Some error {error} ,  script is runnig !')
+            continue
+                           
+        
