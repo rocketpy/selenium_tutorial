@@ -1,6 +1,6 @@
 import os
-import time
 import requests
+from time import sleep
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -13,11 +13,16 @@ from selenium.webdriver.support import expected_conditions as EC
 #driver = webdriver.Chrome(path)   # driver = webdriver.Firefox()
 #driver.get("https:// ... ")
 
-URL = "https://"
+URL = "https:// "
+
 with requests.Session() as se:
-    se.headers = {"User-Agent": "",
+    se.headers = {"User-Agent": " ",  # insert any User-agent !
                  "Accept-Language": "en"
                  }
     response = se.get(URL)
-soup = 
+    
+soup = BeautifulSoup(response.content, "html.parser")
+pages = int(input("Input quants a pages : "))
+quant_pages = []
+category = input("Input a category : ")
 
