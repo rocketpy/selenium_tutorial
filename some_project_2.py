@@ -29,3 +29,7 @@ category = input("Input a category : ")
 for i in range(1, pages + 1):
     sleep(3)
     srt = quant_pages.append(se.get(f'https://.../{category}/?page=' + str(i)))
+
+for srt in quant_pages:
+    soup = BeautifulSoup(srt.content, "html.parser")
+    
