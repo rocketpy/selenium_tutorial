@@ -17,4 +17,7 @@ options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 chrome = webdriver.Chrome(chrome_options=options)
 
+driver.get("https://rozetka.com.ua/")
 
+notebooks_button = "/html/body/app-root/div/div[1]/app-rz-main-page/div/main/main-page-content/app-fat-menu-tablet/nav/ul/li[1]/a"
+smart_phones = "/html/body/app-root/div/div[1]/app-rz-main-page/div/main/main-page-content/app-fat-menu-tablet/nav/ul/li[2]/a"
