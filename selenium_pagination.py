@@ -8,24 +8,11 @@ from selenium.webdriver.chrome.options import Options
 options = Options()
 # options.add_argument('--headless')
 options.add_argument("start-maximized")
-options.add_argument('disable-infobars')
+options.add_argument('disable-infobars')  # disable infobar in Chrome browser
 driver=webdriver.Chrome(chrome_options=options, executable_path=r'/Users/.../chromedriver')
 
 url = 'https:// ... '
 driver.get(url)
-
-def get_data():
-    data = []
-    rows = driver.find_element_by_xpath('//*[@id="form1"]/table/tbody').find_elements_by_tag_name('tr')
-    for row in rows:
-        app_number = row.find_elements_by_tag_name('td')[1].text
-        address =  row.find_elements_by_tag_name('td')[2].text
-        proposals =  row.find_elements_by_tag_name('td')[3].text
-        status =  row.find_elements_by_tag_name('td')[4].text
-        data.append({"CaseRef": app_number, "address": address, "proposals": proposals, "status": status})
-    print(data)
-    return data
-
 
 def main():
     all_data = []
@@ -45,6 +32,19 @@ def main():
 
  with open( 'filename.json', 'w+' ) as f:
      json.dump( all_data, f )
+        
+ def get_data():
+    data = []
+    rows = driver.find_element_by_xpath('//*[@id="form1"]/table/tbody').find_elements_by_tag_name('tr')
+    for row in rows:
+        app_number = row.find_elements_by_tag_name('td')[1].text
+        address =  row.find_elements_by_tag_name('td')[2].text
+        proposals =  row.find_elements_by_tag_name('td')[3].text
+        status =  row.find_elements_by_tag_name('td')[4].text
+        data.append({"CaseRef": app_number, "address": address, "proposals": proposals, "status": status})
+    print(data)
+    return data       
+        
     
  driver.quit()
 
