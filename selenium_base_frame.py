@@ -10,6 +10,12 @@ from selenium.webdriver.support import expected_conditions as EC
 
 path = "C:\Program Files\chromedriver.exe"  # or , for PyCharm use:  r"C:\Program Files\chromedriver.exe"
 
+options = Options()
+# options.add_argument('--headless')
+options.add_argument("start-maximized")
+options.add_argument('disable-infobars')  # disable infobar in Chrome browser
+# driver = webdriver.Chrome(chrome_options=options, executable_path=r'/Users/.../chromedriver')
+
 #  good practice use PROXY for GOOGLE or YANDEX search !!!
 proxy = "12.345.678.910:8080"
 options = WebDriverWait.ChromeOptions()
