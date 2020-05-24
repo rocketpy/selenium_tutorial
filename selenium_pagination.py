@@ -29,15 +29,15 @@ def get_data():
 
 def main():
     all_data = []
-    select = Select(driver.find_element_by_xpath("//select[@class='formitem' and @id='selWeek']"))
+    select = Select(driver.find_element_by_xpath("... and @id='...']"))
     list_options = select.options
 
     for item in range(len(list_options)):
         select = Select(driver.find_element_by_xpath(""))
         select.select_by_index(str(item))
         driver.find_element_by_css_selector("").click()
-        number_of_pages = int(driver.find_element_by_xpath("").text)
-        for j in range(number_of_pages - 1):
+        number_of_pages = int(driver.find_element_by_xpath("").text)  # get numbers of all pages
+        for j in range(number_of_pages - 1):  # loop for all pages
             all_data.extend(getData())
             driver.find_element_by_xpath("//a[contains(text(),'Next')]").click()
             time.sleep(1)
@@ -47,3 +47,7 @@ def main():
      json.dump( all_data, f )
     
  driver.quit()
+
+
+if __name__ == "__main__":
+    main()
