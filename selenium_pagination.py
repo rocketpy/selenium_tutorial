@@ -11,7 +11,13 @@ options.add_argument("start-maximized")
 options.add_argument('disable-infobars')  # disable infobar in Chrome browser
 driver=webdriver.Chrome(chrome_options=options, executable_path=r'/Users/.../chromedriver')
 
+#  pagination use URL
 url = 'https:// ... '
+pattern = 'https:// ... /{}.html'  # use method format for add a number of page
+for i in range(1, 21):  # 21 pages
+    url = pattern.format(str(i))
+    
+    
 driver.get(url)
 
 def main():
