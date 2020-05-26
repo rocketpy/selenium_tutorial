@@ -39,4 +39,8 @@ time.sleep(3)
 driver.find_element_by_xpath('/html/body/app-root/div/div[1]/rz-super-portal/div/main/section/sp-dynamic-widgets/sp-widget-list[1]/section/ul/li[1]/sp-list-tile/div/a[2]').click()
 time.sleep(3)
 # here need use pagination !!!
+img_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/a[1]/img[2]"
+name_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/a[2]/span"
+price_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/div[4]/div[2]/p/span[1]"
+
 
