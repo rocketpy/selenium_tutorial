@@ -43,4 +43,6 @@ img_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div
 name_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/a[2]/span"
 price_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/div[4]/div[2]/p/span[1]"
 
-
+url_img = driver.find_element_by_xpath(img_xpath).get_attribute('data-url') 
+notebook_name = 
+notebook_price = 
