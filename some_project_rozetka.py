@@ -22,3 +22,13 @@ driver.get("https://rozetka.com.ua/")
 notebooks_pc_button = "/html/body/app-root/div/div[1]/app-rz-main-page/div/main/main-page-content/app-fat-menu-tablet/nav/ul/li[1]/a"
 notebooks = "/html/body/app-root/div/div[1]/rz-super-portal/div/main/section/sp-dynamic-widgets/sp-widget-list[1]/section/ul/li[1]/sp-list-tile/div/a[2]"
 smart_phones = "/html/body/app-root/div/div[1]/app-rz-main-page/div/main/main-page-content/app-fat-menu-tablet/nav/ul/li[2]/a"
+
+#  searching something
+search = driver.find_element_by_xpath('/html/body/app-root/div/div[1]/app-rz-header/header/div/div[2]/div[3]/form/div/div/input')
+time.sleep(1) 
+search.send_keys('name of object')
+time.sleep(1)
+search.send_keys(Keys.ENTER)
+time.sleep(1)
+driver.find_element_by_partial_link_text('Картинки').click()
+
