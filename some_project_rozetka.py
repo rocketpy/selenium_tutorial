@@ -32,3 +32,11 @@ time.sleep(1)
 # time.sleep(1)
 driver.find_element_by_xpath('/html/body/app-root/div/div[1]/app-rz-header/header/div/div[2]/div[3]/form/button').click()
 
+
+# get all notebooks
+driver.find_element_by_xpath('/html/body/app-root/div/div[1]/app-rz-main-page/div/main/main-page-content/app-fat-menu-tablet/nav/ul/li[1]/a').click()
+time.sleep(3)
+driver.find_element_by_xpath('/html/body/app-root/div/div[1]/rz-super-portal/div/main/section/sp-dynamic-widgets/sp-widget-list[1]/section/ul/li[1]/sp-list-tile/div/a[2]').click()
+time.sleep(3)
+# here need use pagination !!!
+
