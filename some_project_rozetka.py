@@ -28,7 +28,7 @@ search = driver.find_element_by_xpath('/html/body/app-root/div/div[1]/app-rz-hea
 time.sleep(1) 
 search.send_keys('name of object')
 time.sleep(1)
-search.send_keys(Keys.ENTER)
-time.sleep(1)
-driver.find_element_by_partial_link_text('Картинки').click()
+# search.send_keys(Keys.ENTER)
+# time.sleep(1)
+driver.find_element_by_xpath('/html/body/app-root/div/div[1]/app-rz-header/header/div/div[2]/div[3]/form/button').click()
 
