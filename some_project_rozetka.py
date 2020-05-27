@@ -59,7 +59,11 @@ def write_csv(data):
         writer.writerow(data)
 
         
-#  add pagination        
+#  pagination use URL
+# url = 'https:// ... '
+pattern = 'https:// ... /{}.html'  # use method format for add a number of page
+for i in range(1, 21):  # 21 pages
+    url = pattern.format(str(i))
 
 
 # xpath's of first cell elements !!!
