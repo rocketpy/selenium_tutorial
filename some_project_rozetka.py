@@ -45,15 +45,28 @@ driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 time.sleep(5)
 
 # get  all grid with all cells
-soup = BeautifulSoup(response.text, "html.parser")
-table = soup.find('', {'class': ''})
+source = driver.page_source
+soup = BeautifulSoup(source, "html.parser")
+grids = soup.find('ul', {'class': 'catalog-grid'})
+cells = grids.find_all('li')  # return a list of all li
 
 
-# here need use pagination !!!
+#  write data to csv file
+def write_csv(data):
+    with open('.csv', 'a') as f:
+        order = ['name', 'price', 'img_href']
+        writer = csv.DictWriter(f, fieldnames=order)
+        writer.writerow(data)
+
+        
+#  add pagination        
+
+
+# xpath's of first cell elements !!!
 img_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/a[1]/img[2]"
 name_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/a[2]/span"
 price_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/div[4]/div[2]/p/span[1]"
 
-url_img = driver.find_element_by_xpath(img_xpath).get_attribute('data-url') 
-notebook_name = driver.find_element_by_class_name("goods-tile__title").text
-notebook_price = driver.find_element_by_class_name("goods-tile__price-value").text
+#url_img = driver.find_element_by_xpath(img_xpath).get_attribute('data-url') 
+#notebook_name = driver.find_element_by_class_name("goods-tile__title").text
+#notebook_price = driver.find_element_by_class_name("goods-tile__price-value").text
