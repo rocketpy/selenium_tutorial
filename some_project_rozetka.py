@@ -42,8 +42,12 @@ time.sleep(3)
 
 # scroll page down
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+time.sleep(7)
+driver.find_element_by_xpath('/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-pagination/div/a/span').click()
+time.sleep(3)
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 time.sleep(5)
-nums_pages_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-pagination/rz-paginator/div/ul/li[9]/a"
+#nums_pages_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-pagination/rz-paginator/div/ul/li[9]/a"
 
 
 # get  all grid with all cells
