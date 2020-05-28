@@ -43,12 +43,15 @@ time.sleep(3)
 # scroll page down
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 time.sleep(5)
+nums_pages_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-pagination/rz-paginator/div/ul/li[9]/a"
+
 
 # get  all grid with all cells
 source = driver.page_source
 soup = BeautifulSoup(source, "html.parser")
 grids = soup.find('ul', {'class': 'catalog-grid'})
 cells = grids.find_all('li')  # return a list of all li
+nums_pages = soup.find('a', {'class': 'pagination__link'}).text
 
 
 #  write data to csv file
@@ -59,10 +62,10 @@ def write_csv(data):
         writer.writerow(data)
 
         
-#  pagination use URL
+#  pagination 
 # url = 'https:// ... '
-pattern = 'https:// ... /{}.html'  # use method format for add a number of page
-for i in range(1, 21):  # 21 pages
+pattern = 'https:// ... /{}.html
+for i in range(1, 21):
     url = pattern.format(str(i))
 
 
