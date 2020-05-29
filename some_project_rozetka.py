@@ -48,7 +48,7 @@ driver.find_element_by_xpath('/html/body/app-root/div/div[1]/rz-category/div/mai
 time.sleep(3)
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 time.sleep(5)
-#nums_pages_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-pagination/rz-paginator/div/ul/li[9]/a"
+nums_pages_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-pagination/rz-paginator/div/ul/li[9]/a"
 
 
 # get  all grid with all cells
@@ -66,32 +66,33 @@ def write_csv(data):
         writer = csv.DictWriter(f, fieldnames=order)
         writer.writerow(data)
 
-        
+"""        
 #  pagination 
 # url = 'https:// ... '
 pattern = 'https:// ... /{}.html
 for i in range(1, 21):
     url = pattern.format(str(i))
+"""    
     
-    
-page_nums = 10  # nums pagination pages
-max_page_digit = 3  # 001.html
+page_nums = nums_pages_xpath
+pages_to_parse = 3  
 
 with open('result.csv', 'w') as f:
     f.write('Name', 'Price \n')
 
-driver = webdriver.Firefox()
+# driver = webdriver.Firefox()
 
-for i in range(1, max_page_digit + 1):
-    page_num = (max_page_digit - len(str(i))) + '0' + str(i)
+for i in range(1, pages_to_parse + 1):
+    page_num = (pages_to_parse - len(str(i))) + '0' + str(i)
     url = "https:// .../" + page_num + '.html'
 
     driver.get(url)
     
-    elems = driver.find_elements_by_xpath('//div[@title="title_name"]')
-    prices = driver.find_elements_by_xpath('//span[@class="item_price"]')
+    elems = driver.find_elements_by_xpath('')
+    prices = driver.find_elements_by_xpath('')
 
     pages_items = len(elems)
+    
     with open('results.csv', 'a') as f:
         for i in range(pages_items):
             f.write(elems[i].text + "," + prices[i].text + '\n')
