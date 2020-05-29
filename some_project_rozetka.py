@@ -1,4 +1,5 @@
 import os
+import csv
 from time import sleep
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -71,6 +72,29 @@ def write_csv(data):
 pattern = 'https:// ... /{}.html
 for i in range(1, 21):
     url = pattern.format(str(i))
+    
+    
+page_nums = 10  # nums pagination pages
+max_page_digit = 3  # 001.html
+
+with open('result.csv', 'w') as f:
+    f.write('Name', 'Price \n')
+
+driver = webdriver.Firefox()
+
+for i in range(1, max_page_digit + 1):
+    page_num = (max_page_digit - len(str(i))) + '0' + str(i)
+    url = "https:// .../" + page_num + '.html'
+
+    driver.get(url)
+    
+    elems = driver.find_elements_by_xpath('//div[@title="title_name"]')
+    prices = driver.find_elements_by_xpath('//span[@class="item_price"]')
+
+    pages_items = len(elems)
+    with open('results.csv', 'a') as f:
+        for i in range(pages_items):
+            f.write(elems[i].text + "," + prices[i].text + '\n')
 
 
 # xpath's of first cell elements !!!
