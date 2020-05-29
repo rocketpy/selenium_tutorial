@@ -33,7 +33,6 @@ time.sleep(1)
 # time.sleep(1)
 driver.find_element_by_xpath('/html/body/app-root/div/div[1]/app-rz-header/header/div/div[2]/div[3]/form/button').click()
 
-time.sleep(3)
 
 # get all notebooks
 driver.find_element_by_xpath('/html/body/app-root/div/div[1]/app-rz-main-page/div/main/main-page-content/app-fat-menu-tablet/nav/ul/li[1]/a').click()
@@ -50,53 +49,59 @@ driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 time.sleep(5)
 nums_pages_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-pagination/rz-paginator/div/ul/li[9]/a"
 
-
+"""
 # get  all grid with all cells
 source = driver.page_source
 soup = BeautifulSoup(source, "html.parser")
 grids = soup.find('ul', {'class': 'catalog-grid'})
 cells = grids.find_all('li')  # return a list of all li
 nums_pages = soup.find('a', {'class': 'pagination__link'}).text
+"""
 
+page_nums = nums_pages_xpath
 
+with open('result.csv', 'w') as f:
+    f.write('name', 'price', 'img_url')
+
+for i in range(1, page_nums + 1):
+    page_num = (page_nums - len(str(i))) + '0' + str(i)
+    url = "https://https://rozetka.com.ua/notebooks/c80004/page=" + page_num
+
+    driver.get(url)
+    
+    source = driver.page_source
+    soup = BeautifulSoup(source, "html.parser")
+    grids = soup.find('ul', {'class': 'catalog-grid'})
+    cells = grids.find_all('li')  # return a list of all li
+    nums_pages = soup.find('a', {'class': 'pagination__link'}).text
+    
+    #elems = driver.find_elements_by_xpath('')
+    name = driver.find_elements_by_('')
+    price = driver.find_elements_by_('')
+    img_url = driver.find_elements_by_('')
+    
+    page_items = 60
+    
+    with open('results.csv', 'a') as f:
+        for i in range(pages_items):
+            f.write(name[i].text + "," + price[i].text + '\n')
+
+      
+    
+"""
 #  write data to csv file
 def write_csv(data):
     with open('.csv', 'a') as f:
         order = ['name', 'price', 'img_href']
         writer = csv.DictWriter(f, fieldnames=order)
         writer.writerow(data)
-
-"""        
+  
 #  pagination 
 # url = 'https:// ... '
 pattern = 'https:// ... /{}.html
 for i in range(1, 21):
     url = pattern.format(str(i))
-"""    
-    
-page_nums = nums_pages_xpath
-pages_to_parse = 3  
-
-with open('result.csv', 'w') as f:
-    f.write('Name', 'Price \n')
-
-# driver = webdriver.Firefox()
-
-for i in range(1, pages_to_parse + 1):
-    page_num = (pages_to_parse - len(str(i))) + '0' + str(i)
-    url = "https:// .../" + page_num + '.html'
-
-    driver.get(url)
-    
-    elems = driver.find_elements_by_xpath('')
-    prices = driver.find_elements_by_xpath('')
-
-    pages_items = len(elems)
-    
-    with open('results.csv', 'a') as f:
-        for i in range(pages_items):
-            f.write(elems[i].text + "," + prices[i].text + '\n')
-
+"""                
 
 # xpath's of first cell elements !!!
 img_xpath = "/html/body/app-root/div/div[1]/rz-category/div/main/ctg-catalog/div/div[2]/section/div/ctg-grid/ul/li[1]/app-goods-tile-default/div/div[2]/a[1]/img[2]"
