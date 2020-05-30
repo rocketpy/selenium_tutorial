@@ -29,6 +29,9 @@ driver = webdriver.Chrome(path)  # or  webdriver.Chrome(executable_path=path)
 vk_number = ""
 vk_password = ""
 
+# got to previous url use:  driver.back()
+# go to next url use:  driver.forward() 
+
 driver.get('https://yandex.ru')
 
 print(driver.title)  # title of a page
@@ -41,6 +44,10 @@ time.sleep(1)
 search.send_keys(Keys.ENTER)  # ENTER , it's a button at keyboard
 time.sleep(1)
 driver.find_element_by_partial_link_text('Картинки').click()  # or  by_link_text()
+
+# for check element for exist
+# print(elem.is_displayed())  # return True or False
+# print(elem.is_enabled())  # same
 
 #  working with opened tabs in browser
 tabs = driver.window_handles  # get a list of opened tabs 
