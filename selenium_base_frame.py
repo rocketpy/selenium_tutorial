@@ -30,6 +30,10 @@ vk_number = ""
 vk_password = ""
 
 driver.get('https://yandex.ru')
+
+print(driver.title)  # title of a page
+print(driver.current_url)  # check a current url
+
 search = driver.find_element_by_id('text')  # input id_name 
 time.sleep(1)  # use sleep , for simulation of user actions
 search.send_keys('Kate Middleton')  #  she is so cute and beautiful ))
@@ -76,4 +80,5 @@ action.key_down(Keys.CONTROL).send_keys('v').key_up(Keys.CONTROL).perform()  # f
 time.sleep(5)  # wait for download a img
 driver.find_element_by_xpath('//*[@id="send_post"]').click()  # click button for publish a new post
 
-driver.quit()
+
+driver.quit()  # or driver.close()
