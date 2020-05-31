@@ -24,12 +24,28 @@ print(driver.current_url)  # check a current url
 print(elem.is_displayed())  # return True or False
 print(elem.is_enabled())  # use for check_box , return True or False
 
+# working with opened windows
+tabs = driver.window_handles  # get a list opened tabs
+driver.switch_to.window(tabs[1])  # change window to second opened tab !!!
+
 # use INPUT field on web_page
 search = driver.find_element_by_id('text')  # input id_name 
 search.send_keys('some_word or text')  #  she is so cute and beautiful ))
 search.send_keys(Keys.ENTER)  # ENTER , it's a button at keyboard
 search.clear()  # clean field before send a new text
 
+# cklick on button
+driver.find_element_by_id("button_id").click()
+
+# use ActionChains case
+# for copy img to computer memory (like  CTRL+C  buttons)
+action = ActionChains(driver)
+action.key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
+
+# wait some time for download a page
+wait = WebDriverWait(driver, 5)  # 5 sec
+#  or
+element = wait.until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, 'Open')))
 
 # to close window
 driver.quit()  
