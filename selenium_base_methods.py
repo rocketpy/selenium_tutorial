@@ -37,6 +37,9 @@ search.clear()  # clean field before send a new text
 # cklick on button
 driver.find_element_by_id("button_id").click()
 
+# find element by CSS selector
+elem = driver.find_element_by_css_selector("input[value=some_name]")
+
 # use ActionChains case
 # for copy img to computer memory (like  CTRL+C  buttons)
 action = ActionChains(driver)
@@ -46,6 +49,9 @@ action.key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
 wait = WebDriverWait(driver, 5)  # 5 sec
 #  or
 element = wait.until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, 'Open')))
+
+# scroll page down
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight)") 
 
 # to close window
 driver.quit()  
