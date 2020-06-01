@@ -43,6 +43,15 @@ search.clear()  # clean field before send a new text
 
 # cklick on button
 driver.find_element_by_id("button_id").click()
+#  or
+driver.find_element(By.ID, "button_id").send_keys("some_word")  # provide value into text box !!!
+
+# use Select
+#  using Select , by visible_text
+elem = Select(driver.find_element_by_xpath("elem_xpath")).select_by_visible_text("some_text") 
+#  or by_value
+elem = Select(driver.find_element_by_xpath("elem_xpath")).select_by_value("1")
+
 
 # find many same elements on page
 same_elems = driver.find_elements(By.CLASS_NAME, "class_name")  # text_field  , for example
