@@ -14,7 +14,12 @@ driver = webdriver.Chrome(chrome_options=options)  # Firefox()
 
 # without Proxy
 driver = webdriver.Chrome(path)  # or  webdriver.Chrome(executable_path=path)
+
+# maximize window
+driver.maximize_window()
+
 driver.get("https:// ... ")  # go to some URL
+
 
 # checking some INFO
 print(driver.title)  # title of a page
@@ -38,6 +43,9 @@ search.clear()  # clean field before send a new text
 
 # cklick on button
 driver.find_element_by_id("button_id").click()
+
+# find many same elements on page
+same_elems = driver.find_elements(By.CLASS_NAME, "class_name")  # text_field  , for example
 
 # find element by CSS selector
 elem = driver.find_element_by_css_selector("input[value=some_name]")
