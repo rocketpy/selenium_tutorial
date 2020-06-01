@@ -20,9 +20,11 @@ driver.get("https:// ... ")  # go to some URL
 print(driver.title)  # title of a page
 print(driver.current_url)  # check a current url
 
-# for checking some element for exist
+# Conditional commands
+# for checking some element for exist or selected
 print(elem.is_displayed())  # return True or False
 print(elem.is_enabled())  # use for check_box , return True or False
+print(elem.is_selected())  # status of some checkbox or radio_button , selected or not
 
 # working with opened windows
 tabs = driver.window_handles  # get a list opened tabs
@@ -40,15 +42,20 @@ driver.find_element_by_id("button_id").click()
 # find element by CSS selector
 elem = driver.find_element_by_css_selector("input[value=some_name]")
 
-# use ActionChains case
+#  ActionChains cases
 # for copy img to computer memory (like  CTRL+C  buttons)
 action = ActionChains(driver)
 action.key_down(Keys.CONTROL).send_keys('c').key_up(Keys.CONTROL).perform()
 
-# wait some time for download a page
-wait = WebDriverWait(driver, 5)  # 5 sec
+#  Waits 
+# wait some time for download a page or some elements
+wait = WebDriverWait(driver, 5)  # Best pratice , use Explicit Wait !!!
 #  or
 element = wait.until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, 'Open')))
+# or
+#  Implicitly Wait , waits only until an item appears in the DOM !!!
+driver.implicitly_wait(10) 
+
 
 # scroll page down
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight)") 
