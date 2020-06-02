@@ -52,6 +52,11 @@ print(elem.is_selected())  # status of some checkbox or radio_button , selected 
 tabs = driver.window_handles  # get a list opened tabs
 driver.switch_to.window(tabs[1])  # change window to second opened tab !!!
 
+#  swing from frame to frame
+driver.switch_to_frame("frame_name")
+#  come back to the parent frame
+driver.switch_to_default_content()
+
 # use INPUT field on web_page
 search = driver.find_element_by_id('text')  # input id_name 
 search.send_keys('some_word or text')  #  she is so cute and beautiful ))
@@ -104,6 +109,22 @@ driver.back()
 
 #  Popup dialogs
 alert = driver.switch_to_alert()
+
+# working with Cookies
+driver.get("https://www ... ")
+
+# Set the cookie. This one's valid for the entire domain
+cookie = {‘name’ : ‘foo’, ‘value’ : ‘bar’}
+driver.add_cookie(cookie)
+# Output all the available cookies for the current URL
+driver.get_cookies()
+
+#   Drag and drop
+elem = driver.find_element_by_name("source")
+targ = driver.find_element_by_name("target")
+action = ActionChains(driver)
+action.drag_and_drop(elem, targ).perform()
+
 
 # to close window
 driver.quit()  
