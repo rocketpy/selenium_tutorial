@@ -12,13 +12,22 @@ options = WebDriverWait.ChromeOptions()
 options.add_argument('--proxy-server=%s' % PROXY)
 driver = webdriver.Chrome(chrome_options=options)  # Firefox()
 
+#  path to webdriver
+PATH = "C:\Program Files\chromedriver.exe" #  or  r"C:\Program Files\chromedriver.exe" 
+
 # without Proxy
 driver = webdriver.Chrome(path)  # or  webdriver.Chrome(executable_path=path)
+driver = webdriver.Firefox(path)
+driver = webdriver.Ie(path)
 
 # maximize window
 driver.maximize_window()
 
-driver.get("https:// ... ")  # go to some URL
+#  timeout for loading web_page
+driver.set_page_load__timeout(10)
+
+#  go to some URL
+driver.get("https:// ... ")  
 
 
 # checking some INFO
