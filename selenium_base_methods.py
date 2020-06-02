@@ -1,3 +1,4 @@
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -29,6 +30,13 @@ driver.set_page_load__timeout(10)
 #  go to some URL
 driver.get("https:// ... ")  
 
+#  change URL
+driver.get("https://...")
+
+driver.get(response.url)  #  tested with scrapy or requests   
+time.sleep(3)   
+driver.refresh()
+
 
 # checking some INFO
 print(driver.title)  # title of a page
@@ -47,7 +55,7 @@ driver.switch_to.window(tabs[1])  # change window to second opened tab !!!
 # use INPUT field on web_page
 search = driver.find_element_by_id('text')  # input id_name 
 search.send_keys('some_word or text')  #  she is so cute and beautiful ))
-search.send_keys(Keys.ENTER)  # ENTER , it's a button at keyboard
+search.send_keys(Keys.ENTER)  # ENTER , it's a button at keyboard ,  send_keys(Keys.CTRL + 'c')
 search.clear()  # clean field before send a new text
 
 # cklick on button
@@ -85,6 +93,9 @@ driver.implicitly_wait(10)
 
 # scroll page down
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight)") 
+
+# refresh web_page
+driver.refresh()
 
 # to close window
 driver.quit()  
