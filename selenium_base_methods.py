@@ -97,6 +97,14 @@ driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 # refresh web_page
 driver.refresh()
 
+#  browser’s history
+driver.forward()
+driver.back()
+
+
+#  Popup dialogs
+alert = driver.switch_to_alert()
+
 # to close window
 driver.quit()  
 # or 
