@@ -2,6 +2,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
@@ -67,12 +68,33 @@ search.clear()  # clean field before send a new text
 driver.find_element_by_id("button_id").click()
 #  or
 driver.find_element(By.ID, "button_id").send_keys("some_word")  # provide value into text box !!!
+#  submit form
+driver.find_element_by_id("submit").click()
 
 # use Select
 #  using Select , by visible_text
 elem = Select(driver.find_element_by_xpath("elem_xpath")).select_by_visible_text("some_text") 
 #  or by_value
 elem = Select(driver.find_element_by_xpath("elem_xpath")).select_by_value("1")
+#  or
+select = Select(driver.find_element_by_name('name'))
+select.select_by_index(index)
+select.select_by_visible_text("text")
+select.select_by_value(value)
+
+#  get all available options
+options = select.options
+
+#  select all
+select = Select(driver.find_element_by_xpath("..."))
+all_selected_options = select.all_selected_options
+
+# send for all elems
+element.submit()
+
+# for deselecting
+elem = Select(driver.find_element_by_id('id'))
+elem.deselect_all()
 
 
 # find many same elements on page
