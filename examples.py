@@ -4,7 +4,7 @@ from selenium import webdriver
 from fake_useragent import UserAgent
 from datetime import datetime as dt
 # https://pypi.org/project/fake-useragent/
-
+#  #  read the docs : https://selenium-python.readthedocs.io/
 
 # need add function for change Proxy and UserAgent !!!
 
