@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+#  get attribute href
 href = driver.find_element_by_link_text("Recommend Selenium").get_attribute("href")
 print(href) # recomand.html
  
@@ -18,3 +19,6 @@ print(text) # Recommend Selenium
  
 tag_name = driver.find_element_by_id("recommend_selenium_link").tag_name
 print(tag_name) #  a
+
+# click on second same href
+driver.find_elements_by_link_text("Some second same link")[1].click()
