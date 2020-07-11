@@ -18,3 +18,16 @@ results = browser.find_elements_by_class_name('result')
 
 browser.close()
 quit()
+
+
+# find and play some song on bandcamp.com
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options
+
+
+opts = Option()
+opts.set_headless()  # without grafic interface !!!
+ 
+browser = Firefox(options=opts)
+browser.get('https://bandcamp.com')
+browser.find_element_by_class('playbutton').click()
