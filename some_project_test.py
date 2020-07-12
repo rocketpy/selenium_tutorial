@@ -31,3 +31,9 @@ opts.set_headless()  # without grafic interface !!!
 browser = Firefox(options=opts)
 browser.get('https://bandcamp.com')
 browser.find_element_by_class('playbutton').click()
+
+tracks = browser.find_elements_by_class_name('discover-item')
+len(tracks)  #  quantity a tracks
+tracks[3].click()  # play track number 4
+
+
