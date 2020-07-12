@@ -67,3 +67,14 @@ finally:
 # time.sleep(5)
 
 # driver.quit()  # or driver.close()
+
+# using Cookies
+driver.get("https://www ...com")
+
+# set the cookie !
+cookie = {‘name’ : ‘foooo’, ‘some_value’ : ‘bar’}
+driver.add_cookie(cookie)
+
+# output all the available cookies for the current URL
+driver.get_cookies()
+
