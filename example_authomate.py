@@ -45,11 +45,16 @@ class BandLeader():
                 print('Genre  : {}'.format(lines[2]))
            
            
-   def catalogue_pages(self):
-
+    def catalogue_pages(self):
         print('PAGES')
         for e in self.browser.find_elements_by_class_name('item-page'):
             print(e.text)
         print('')
            
            
+    def more_tracks(self,page='next'):
+        next_btn = [e for e in self.browser.find_elements_by_class_name('item-page')
+                    if e.text.lower().strip() == str(page)]
+        if next_btn:
+            next_btn[0].click()
+            self.tracks()
