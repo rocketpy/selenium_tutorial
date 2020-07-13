@@ -25,17 +25,17 @@ class BandLeader():
     def tracks(self):
         sleep(1)
  
-        # Получаем хранилище для списка видимых треков.
+        # get tracks
         discover_section = self.browser.find_element_by_class_name('discover-results')
         left_x = discover_section.location['x']
         right_x = left_x + discover_section.size['width']
  
-        # Фильтруем объекты в списке, чтобы получить только те, которые мы можем включать.
+        # filter tracks
         discover_items = self.browser.find_elements_by_class_name('discover-item')
         self.track_list = [t for t in discover_items
                            if t.location['x'] >= left_x and t.location['x'] < right_x]
  
-        # Вывод доступных треков на экран.
+        # show tracks to play
         for (i,track) in enumerate(self.track_list):
             print('[{}]'.format(i+1))
             lines = track.text.split('\n')
@@ -43,3 +43,13 @@ class BandLeader():
             print('Artist : {}'.format(lines[1]))
             if len(lines) > 2:
                 print('Genre  : {}'.format(lines[2]))
+           
+           
+   def catalogue_pages(self):
+
+        print('PAGES')
+        for e in self.browser.find_elements_by_class_name('item-page'):
+            print(e.text)
+        print('')
+           
+           
