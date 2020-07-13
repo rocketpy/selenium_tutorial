@@ -22,6 +22,7 @@ class BandLeader():
         self.track_list = []
         self.tracks()
  
+ 
     def tracks(self):
         sleep(1)
  
@@ -58,3 +59,23 @@ class BandLeader():
         if next_btn:
             next_btn[0].click()
             self.tracks()
+
+          
+    def play(self,track=None):
+       if track is None:
+            self.browser.find_element_by_class_name('playbutton').click()
+       elif type(track) is int and track <= len(self.track_list) and track >= 1:
+            self._current_track_number = track
+            self.track_list[self._current_track_number - 1].click()          
+
+          
+    def play_next(self):
+        if self._current_track_number < len(self.track_list):
+            self.play(self._current_track_number+1)
+        else:
+            self.more_tracks()
+            self.play(1)
+ 
+ 
+    def pause(self):
+        self.play()          
