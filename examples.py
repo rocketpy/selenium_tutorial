@@ -46,3 +46,19 @@ while True:  #
     #  testing code here ...
 
     web.quit()
+    
+    
+#  change to new window by Link
+# ...
+LINK = 'https://...'
+# ...
+#driver.implicitly_wait(3)
+driver.maximize_window()
+driver.get('LINK')
+driver.find_element_by_xpath("xpath").click()
+driver.find_element_by_xpath("xpath").click()
+time.sleep(2)
+# driver.find_element_by_tag_name('body').send_keys(Keys.CONTROL + Keys.TAB)
+driver.switch_to.window(window_name)
+time.sleep(2)
+t_driver = driver.current_url
