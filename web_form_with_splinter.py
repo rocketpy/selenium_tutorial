@@ -1,10 +1,13 @@
+from time import sleep
+from selenium import webdriver
 from splinter import Browser
 # https://splinter.readthedocs.io/en/latest/tutorial.html
 
 
 FIRST_NAME = ''
-LART_NAME = ''
+LAST_NAME = ''
 EMAIL_ADDRESS = ''
+PASSWORD = ''
 
 # browser = Browser()  firefox using by default
 browser = Browser('firefox')
