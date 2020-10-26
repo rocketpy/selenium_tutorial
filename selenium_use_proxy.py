@@ -26,7 +26,16 @@ prox.add_to_capabilities(capabilities)
 driver = webdriver.Chrome(desired_capabilities=capabilities)
 
 
-# or
+# or  Proxy for FireFox
+profile = webdriver.FirefoxProfile()
+profile.set_preference("network.proxy.type", 1)
+profile.set_preference("network.proxy.http", "proxy.server.address")
+profile.set_preference("network.proxy.http_port", "port_number")
+profile.update_preferences()
+driver = webdriver.Firefox(firefox_profile=profile)
+
+
+#  or
 
 from selenium import webdriver
 
