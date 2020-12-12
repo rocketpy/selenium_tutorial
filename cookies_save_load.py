@@ -26,7 +26,27 @@ def load_cookie(driver, path):
          cookies = pickle.load(cookiesfile)
          for cookie in cookies:
              driver.add_cookie(cookie)
-           
+
+            
+#  load to file cookies            
+import pickle
+import selenium.webdriver 
+
+
+driver = selenium.webdriver.Firefox()
+driver.get("http://www...")
+pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
+
+#  add cookies
+import pickle
+import selenium.webdriver 
+
+driver = selenium.webdriver.Firefox()
+driver.get("http://www...")
+cookies = pickle.load(open("cookies.pkl", "rb"))
+for cookie in cookies:
+    driver.add_cookie(cookie)
+        
         
 #  some example        
 import pickle
