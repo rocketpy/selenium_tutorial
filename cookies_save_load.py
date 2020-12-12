@@ -26,3 +26,28 @@ def load_cookie(driver, path):
          cookies = pickle.load(cookiesfile)
          for cookie in cookies:
              driver.add_cookie(cookie)
+           
+        
+#  some example        
+import pickle
+from selenium import webdriver
+
+
+def save_cookie(driver):
+    with open("cookie", 'wb') as filehandler:
+        pickle.dump(driver.get_cookies(), filehandler)
+        
+def load_cookie(driver):
+     with open("cookie", 'rb') as cookiesfile:
+         cookies = pickle.load(cookiesfile)
+         for cookie in cookies:
+             print(cookie)
+             driver.add_cookie(cookie)
+
+driver = webdriver.Chrome(ChromeDriverManager().install())
+url = 'https://www...'
+driver.get(url)
+#  first login and get cookies
+load_cookie(driver) 
+save_cookie(driver)
+driver.quit()            
