@@ -47,7 +47,42 @@ cookies = pickle.load(open("cookies.pkl", "rb"))
 for cookie in cookies:
     driver.add_cookie(cookie)
         
-        
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+
+chrome_options = Options()
+chrome_options.add_argument("--user-data-dir=chrome-data")
+driver = webdriver.Chrome('/usr/bin/chromedriver', options=chrome_options)
+chrome_options.add_argument("user-data-dir=chrome-data") 
+driver.get('https://www...')
+time.sleep(30)  # time to enter data
+driver.quit()
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+
+chrome_options = Options()
+chrome_options.add_argument("--user-data-dir=chrome-data")
+driver = webdriver.Chrome('/chromedriver', options=chrome_options)
+driver.get('https://www...')  # is already authenticated
+time.sleep(10)
+driver.quit()   
+# use or this , modificated
+"""
+chrome_options = Options()
+chrome_options.add_argument("--user-data-dir=chrome-data")
+driver = webdriver.Chrome('chromedriver.exe', options=chrome_options)  # path to driver
+driver.get('https://web.whatsapp.com')  # is already authenticated
+time.sleep(30)
+"""
+
+
 #  some example        
 import pickle
 from selenium import webdriver
