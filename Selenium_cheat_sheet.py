@@ -20,3 +20,18 @@ operadriver = webdriver.Opera(executable_path="Path to operadriver")
 
 #  SafariDriver now requires manual installation of the extension prior to automation !!!
 
+
+# Options, browser arguments
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+
+options = Options()
+
+options.add_argument("--headless")  # open browser in headless mode. Works in both Chrome and Firefox browsers
+options.add_argument("--incognito")  # open private chrome browser 
+options.add_argument("--start-maximized")  # start browser maximized to screen. Requires only for Chrome browser. Firefox by default starts maximized
+options.add_argument("--disable-notifications")  # disable notifications, works Only in Chrome browser
+
+driver = webdriver.Chrome(chrome_options=options, executable_path="Path to driver")
+ 
