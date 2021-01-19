@@ -34,4 +34,8 @@ options.add_argument("--start-maximized")  # start browser maximized to screen. 
 options.add_argument("--disable-notifications")  # disable notifications, works Only in Chrome browser
 
 driver = webdriver.Chrome(chrome_options=options, executable_path="Path to driver")
+
+#  OR
+options = Options()
+options.add_argument("--incognito", "--start-maximized", "--headless")
  
