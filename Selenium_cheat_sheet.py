@@ -38,4 +38,13 @@ driver = webdriver.Chrome(chrome_options=options, executable_path="Path to drive
 #  OR
 options = Options()
 options.add_argument("--incognito", "--start-maximized", "--headless")
+driver = webdriver.Chrome(chrome_options=options, executable_path="Path to driver")
+
+
+#  go to some URL
+
+driver.get("https://www...")  # go to page
+driver.back()
+driver.forward()
+driver.refresh()  # update page
  
