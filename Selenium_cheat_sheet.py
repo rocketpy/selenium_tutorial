@@ -42,9 +42,31 @@ driver = webdriver.Chrome(chrome_options=options, executable_path="Path to drive
 
 
 #  go to some URL
-
 driver.get("https://www...")  # go to page
 driver.back()
 driver.forward()
 driver.refresh()  # update page
+
+# get browser details
+driver.title
+driver.window_handles
+driver.current_window_handles
+driver.current_url
+driver.page_source
+
+# get some element or elements
+driver.find_element_by_  #  return first element matching the given locator argument
+driver.find_elements_by_  # return a list with all elements matching the given locator argument
+
+# by id
+# <input id="q" type="text" />
+element = driver.find_element_by_id("q")
+
+# by name
+# <input id="q" name="search" type="text" />
+element = driver.find_element_by_name("search")
+
+# by class_name
+# <div class="username" style="display: block;">…</div>
+element = driver.find_element_by_class_name("username")
  
