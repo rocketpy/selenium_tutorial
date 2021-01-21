@@ -28,6 +28,35 @@ length = len(iframe_list)
 # Index of the iframe starts with ‘0’. Suppose if there are 100 frames in page,
 # we can switch to the iframe by using index like below.
 
-driver.switchTo().frame(0)
-driver.switchTo().frame(1)
+driver.switch_to().frame(0)
+driver.switch_to().frame(1)
+
+#  we can alternatively use driver.switch_to.frame() as well as driver.switch_to.default_content()
+
+#  example
+import time
+from selenium import webdriver
+
+
+driver = webdriver.Firefox(executable_path="/path/to/geckodriver")
+driver.get("http://www...com/iframe.html")
+
+# use any of <br> # by index of the iframe
+driver.switch_to_frame(0)
+
+# by ID of the iframe
+driver.switch_to_frame("frame_name")
+
+# by name of the iframe
+driver.switch_to_frame("frame_name")
+
+# by finding iframe as web element
+frame_element = driver.find_element_by_id("id_name")
+driver.switch_to_frame(frame_element)
+
+driver.find_element_by_id("id_name").click()
+time.sleep(5)
+driver.switch_to_default_content()
+
+driver.quit()
 
