@@ -21,3 +21,13 @@ length = len(iframe_list)
 # By using Name or Id of the frame
 # By using frame Web Element
 
+
+#  switch to iframe by index
+
+# Index is the position at which an iframe occurs in the HTML page. Using this index we can switch to it.
+# Index of the iframe starts with ‘0’. Suppose if there are 100 frames in page,
+# we can switch to the iframe by using index like below.
+
+driver.switchTo().frame(0)
+driver.switchTo().frame(1)
+
