@@ -43,4 +43,16 @@ finally:
 #  15. Leverage parallel testing in Selenium.
 
 #  16. Avoid code duplication (or wrap Selenium calls).
+
+
+#   Worst practices for Automation testing with Selenium :
+
+#  1. Link spidering (or crawling).
+#  2. Automation of logins on Gmail, Facebook and other related platforms.
+#  3. Performance testing.
+#  4. Avoid test dependency.
+#  5. Two-Factor authentication (2FA).
+#  6. CAPTCHAS.
+#  7. File downloads.
+
  
