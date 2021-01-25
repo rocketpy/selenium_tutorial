@@ -18,7 +18,29 @@ finally:
     driver.quit()
     
     
-#  4. Use maximize the browser window    
+#  4. Use maximize the browser window. 
 
+#  5. Set the browser zoom level to 100 percent.
 
-    
+#  6. Create a browsers compatibility matrix or table for cross browser testing.   
+
+#  7. Use design patterns and principles like Page Object Model (POM).  
+
+#  8. Implement logging and reporting.
+
+#  9. For parameterization use Data-Driven Testing.
+
+#  10. Follow a uniform directory structure.
+
+#  11. Use BDD framework with Selenium.
+
+#  12. Come up with autonomous test case design.
+
+#  13. Do not use a Single driver implementation.
+
+#  14. Use assert and verify in appropriate scenarios.
+
+#  15. Leverage parallel testing in Selenium.
+
+#  16. Avoid code duplication (or wrap Selenium calls).
+ 
