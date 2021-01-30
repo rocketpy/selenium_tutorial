@@ -1,3 +1,8 @@
+#  SeleniumBase is a Python framework for web automation
+
+#  Docs:  https://github.com/seleniumbase/SeleniumBase
+#  PyPi:  pip install seleniumbase
+
 #  common SeleniumBase methods
 """
 self.open(URL)  # Navigate to the web page
