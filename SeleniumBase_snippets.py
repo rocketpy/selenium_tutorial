@@ -27,6 +27,12 @@ self.switch_to_window(WINDOW_NUMBER)  # Switch to a different window/tab
 self.save_screenshot(FILE_NAME)  # Save a screenshot of the current page
 """
 
+# for reports use:
+# pytest test_suite.py --html=report.html
+# or
+# pytest test_suite.py --dashboard --html=report.html
+
+
 #  example , test login
 from seleniumbase import BaseCase
 
