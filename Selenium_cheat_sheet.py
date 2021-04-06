@@ -33,6 +33,7 @@ options.add_argument("--incognito")  # open private chrome browser
 options.add_argument("--start-maximized")  # start browser maximized to screen. Requires only for Chrome browser. Firefox by default starts maximized
 options.add_argument("--disable-notifications")  # disable notifications, works Only in Chrome browser
 
+
 driver = webdriver.Chrome(chrome_options=options, executable_path="Path to driver")
 
 #  OR
@@ -69,4 +70,8 @@ element = driver.find_element_by_name("search")
 # by class_name
 # <div class="username" style="display: block;">…</div>
 element = driver.find_element_by_class_name("username")
- 
+
+# cklick on checkbox with javascript
+driver.execute_script("document.getElementById('personalData').checked = true")
+
+
