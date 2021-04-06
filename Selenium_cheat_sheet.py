@@ -74,4 +74,7 @@ element = driver.find_element_by_class_name("username")
 # cklick on checkbox with javascript
 driver.execute_script("document.getElementById('personalData').checked = true")
 
+click = driver.find_element_by_class_name('checkbox checkbox-off')
+click.click()
+
 
