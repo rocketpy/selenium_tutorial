@@ -33,6 +33,24 @@ driver = webdriver.Firefox(executable_path="/geckodriver",
 # "C:\\users\\\chromedriver.exe"
 # r"C:\\chromedriver.exe"
 
+"""
+from selenium import webdriver
+
+
+PROXY = "<HOST:PORT>"
+webdriver.DesiredCapabilities.FIREFOX['proxy'] = {
+    "httpProxy": PROXY,
+    "ftpProxy": PROXY,
+    "sslProxy": PROXY,
+    "proxyType": "MANUAL",
+
+}
+
+with webdriver.Firefox() as driver:
+    driver.get("https://...")
+
+"""
+
 try:
     driver.get(url="https://www.whatismybrowser.com/detect/what-is-my-user-agent")
     driver.save_screenshot("file_name.png")
