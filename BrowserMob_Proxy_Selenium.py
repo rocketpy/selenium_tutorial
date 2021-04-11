@@ -25,3 +25,17 @@ proxy.har # returns a HAR JSON blob
 server.stop()
 driver.quit()
 
+# For prevent a problems with server need use:
+import psutil
+import time
+
+for proc in psutil.process_iter():
+    # check whether the process name matches
+    if proc.name() == "browsermob-proxy":
+        proc.kill()
+
+# use slep before and after start server        
+server.start()
+time.sleep(1)
+proxy = server.create_proxy()
+time.sleep(1)
