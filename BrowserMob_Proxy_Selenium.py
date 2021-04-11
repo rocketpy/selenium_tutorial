@@ -1,6 +1,9 @@
+# BrowserMob Proxy  is a free utility to help web developers watch and manipulate network traffic from their AJAX applications.
+
 #  Python client for the BrowserMob Proxy
 
 # Docs:  https://browsermob-proxy-py.readthedocs.io/en/latest/
+# Download BrowserMob Proxy:  https://bmp.lightbody.net/
 # pip install browsermob-proxy
 
 # How to use with selenium-webdriver
