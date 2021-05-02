@@ -8,6 +8,16 @@
 from seleniumwire import webdriver 
 
 
+# Options
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--ignore-certificate-errors-spki-list')
+chrome_options.add_argument('--ignore-ssl-errors')
+
+driver== webdriver.Chrome('chromedriver', options=chrome_options,seleniumwire_options=options)
+
+
 driver = webdriver.Firefox()
 
 driver.get('https://www.google.com')
@@ -18,3 +28,7 @@ for request in driver.requests:
               request.response.status_code,
               request.response.headers['Content-Type']
               )
+
+
+        
+        
