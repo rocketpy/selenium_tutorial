@@ -15,8 +15,11 @@ chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--ignore-certificate-errors-spki-list')
 chrome_options.add_argument('--ignore-ssl-errors')
 
-driver== webdriver.Chrome('chromedriver', options=chrome_options,seleniumwire_options=options)
+options = {'proxy': {'http': 'http://myusername:password@myproxyserver.com:123456', 
+                     'https': 'http://myusername:password@myproxyserver.com:123456',
+                     'no_proxy': 'localhost,127.0.0.1'}}
 
+driver== webdriver.Chrome('chromedriver', options=chrome_options, seleniumwire_options=options)
 
 driver = webdriver.Firefox()
 
@@ -28,7 +31,4 @@ for request in driver.requests:
               request.response.status_code,
               request.response.headers['Content-Type']
               )
-
-
-        
         
