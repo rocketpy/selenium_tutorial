@@ -5,6 +5,8 @@
 
 # pip install selenium-stealth
 
+# Test for bots : https://bot.sannysoft.com/
+
 # Important:  As of now selenium-stealth only support Selenium Chrome !!!
 
 #  IMPORTANT
