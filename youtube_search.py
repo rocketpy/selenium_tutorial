@@ -32,13 +32,17 @@ prox.add_to_capabilities(capabilities)
 # driver = webdriver.Chrome(chrome_options=options)  # Firefox()
 driver = webdriver.Chrome(desired_capabilities=capabilities)
 
-driver.get("https://vk.com")
+driver.get("https://...")
 
 # search = driver.find_element_by_xpath('//*[@id="search"]')  # input field 
 # search.send_keys("Prodigy")
-
 # search_button = driver.find_element_by_xpath('//*[@id="search-icon-legacy"]')  # button of search field
-
 # search_button.click()
 
-#driver.quit()
+# get a list of all videos
+driver.get('https://www.youtube.com/results?search_query='+'Blablabla')
+# videos = driver.find_elements_by_id('video-title')
+# videos[0].click()
+
+
+# driver.quit()
