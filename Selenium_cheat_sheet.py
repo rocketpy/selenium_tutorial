@@ -77,4 +77,7 @@ driver.execute_script("document.getElementById('personalData').checked = true")
 click = driver.find_element_by_class_name('checkbox checkbox-off')
 click.click()
 
+# driver quit 
+driver.quit()  
+# or driver.close()
 
