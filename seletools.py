@@ -34,3 +34,22 @@ scroll_to_top(driver, element1)
 scroll_to_bottom(driver, element1, element2)
 # OR
 scroll_to_bottom(driver, element1)
+
+
+# Getting webdriver's wait values
+# Selenium 4 in it's alpha versions already supports that feature, but stable (latest non-alpha version 3+) doesn't.
+
+# get implicit wait value only
+from seletools.waits import get_implicit_wait
+
+
+implicit_wait = get_implicit_wait(driver)
+
+# OR get all waits (non only implicit one)
+from seletools.waits import Wait
+
+waits = Waits(driver)
+implicit_wait = waits.implicit
+page_load = waits.page_load 
+scripts = waits.scripts
+
