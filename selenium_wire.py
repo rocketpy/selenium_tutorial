@@ -1,6 +1,7 @@
 #  Extends Selenium to give you the ability to inspect requests made by the browser.
 
 #  PyPi:  https://pypi.org/project/selenium-wire/
+#  Github: https://github.com/wkeeling/selenium-wire
 
 #  pip install selenium-wire
 
