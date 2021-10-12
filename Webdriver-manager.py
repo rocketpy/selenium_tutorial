@@ -41,4 +41,9 @@ from webdriver_manager.microsoft import IEDriverManager
 driver = webdriver.Ie(IEDriverManager().install())
 
  
+# Use with Edge
+from selenium import webdriver
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
+driver = webdriver.Edge(EdgeChromiumDriverManager().install())
 
