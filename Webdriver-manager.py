@@ -26,5 +26,11 @@ from webdriver_manager.utils import ChromeType
 
 
 driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+
+# Use with FireFox:
+from selenium import webdriver
+from webdriver_manager.firefox import GeckoDriverManager
+
+driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
  
 
