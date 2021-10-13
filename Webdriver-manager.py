@@ -47,3 +47,21 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 driver = webdriver.Edge(EdgeChromiumDriverManager().install())
 
+
+# Use with Opera
+from selenium import webdriver
+from webdriver_manager.opera import OperaDriverManager
+
+driver = webdriver.Opera(executable_path=OperaDriverManager().install())
+
+
+# If the Opera browser is installed in a location other than C:/Program Files or C:/Program Files (x86) on windows
+# and /usr/bin/opera for all unix variants and mac, then use the below code,
+from selenium import webdriver
+from webdriver_manager.opera import OperaDriverManager
+
+options = webdriver.ChromeOptions()
+options.add_argument('allow-elevated-browser')
+options.binary_location = "C:\\Users\\USERNAME\\FOLDERLOCATION\\Opera\\VERSION\\opera.exe"
+driver = webdriver.Opera(executable_path=OperaDriverManager().install(), options=options)
+
