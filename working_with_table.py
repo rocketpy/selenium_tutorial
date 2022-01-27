@@ -8,4 +8,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-URL = "https://www.w3schools.com/html/html_tables.asp"
+URL = "https://www..."
+
+class TableDataTest(unittest.TestCase):
+ 
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.driver.maximize_window()
+ 
+    def test_get_num_rows_(self):
+        driver = self.driver
+        driver.get(URL)
+
