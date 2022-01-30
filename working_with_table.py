@@ -38,5 +38,12 @@ class TableDataTest(unittest.TestCase):
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "...")))
         # nums_cols = len (driver.find_elements_by_xpath("//*[@id='']/tbody/tr/th"))
         nums_cols = len (driver.find_elements_by_xpath("//*[@id='']/tbody/tr[2]/td"))
+        
+    def tearDown(self):
+        self.driver.close()
+        self.driver.quit()
 
 
+if __name__ == "__main__":
+    unittest.main()
+  
