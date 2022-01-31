@@ -22,7 +22,7 @@ ActionChains(driver).drag_and_drop(source_element, dest_element).perform()
 
 """
 
-# Taked from: 
+# Taked from: https://www.lambdatest.com/blog/drag-and-drop-in-selenium-python/
 """
 Performing Drag And Drop Using ActionChains Class
 
@@ -48,4 +48,16 @@ functions of ActionChains class. We will cover all other ActionChains methods in
     In our case, we’ll use these operations for drag and drop in Selenium Python by simulating click using click_and_hold,
     then dragging by using move_to_element or move_by_offset or combo, and by finally releasing, i.e., dropping the selected element. 
 """
+
+import time
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+
+ 
+class DragTest(unittest.TestCase):
+ 
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        
  
