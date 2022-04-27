@@ -27,9 +27,18 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 url = "http://localhost:4444/wd/hub"
+
 capabilities = DesiredCapabilities.FIREFOX.copy()
 capabilities['platform'] = "WINDOWS"
 capabilities['version'] = "10"
 
+# driver_1 = webdriver.Firefox()
+driver_1 = webdriver.Remote(command_executor=url, desired_capabilities=capabilities)
+driver_1.get('http://www...')      
+
+# print(driver_1.session_id)
+# print(driver_1.title)
+
+session_id = driver1.session_id
 """
 
