@@ -20,3 +20,16 @@ driver.get('https://www...')
 
 # print(driver.title)
 
+"""
+from selenium import webdriver
+from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+
+url = "http://localhost:4444/wd/hub"
+capabilities = DesiredCapabilities.FIREFOX.copy()
+capabilities['platform'] = "WINDOWS"
+capabilities['version'] = "10"
+
+"""
+
