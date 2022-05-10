@@ -6,19 +6,20 @@ driver = webdriver.Firefox()
 driver.get("https:// ...  ")
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")  # scroll down the complete page height or a specific height !!!
 time.sleep(3)
-driver.close()  # driver.quit()
+driver.close()  
+# driver.quit()
 
 #  or
-driver.execute_script("window.scrollTo(0, Y)")  #  Y  is a height , 1080 for example
-
-#  or
-label.sendKeys(Keys.PAGE_DOWN
-               
+driver.execute_script("window.scrollTo(0, Y)")  # Y is a height , 1080 for example
+        
 #  or
 from selenium.webdriver.common.keys import Keys
 
 html = driver.find_element_by_tag_name('html')
 html.send_keys(Keys.END)
+#  or
+label.sendKeys(Keys.PAGE_DOWN)
+
 
 #  to scroll to a page with infinite loading !!!
 time_to_sroll = 0.5
