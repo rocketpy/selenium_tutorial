@@ -6,6 +6,9 @@ service = webdriver.firefox.service.Service('geckodriver', port=1234)
 driver = webdriver.Firefox(service=service)
 driver.get('https://')
 
+# selenium_args: ['-port', '5555']
+selenium_args = ["-port", "2828"])
+
 """
 driver = webdriver.Firefox(options=opts, 
 service_args=["--marionette-port", "2828"])  # with Marionette port
