@@ -101,3 +101,9 @@ try:
 finally:
     driver.quit()
 
+
+# disable images
+chrome_options = webdriver.ChromeOptions()
+prefs = {"profile.managed_default_content_settings.images": 2}
+chrome_options.add_experimental_option("prefs", prefs)
+driver = webdriver.Chrome(chrome_options=chrome_options)
