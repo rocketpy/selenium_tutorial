@@ -110,3 +110,18 @@ driver = webdriver.Chrome(chrome_options=chrome_options)
 
 chrome_options.add_experimental_option("prefs", prefs)
 driver = webdriver.Chrome(chrome_options=chrome_options)
+
+# get image src
+driver.find_element_by_id("element_id").get_attribute("src")
+
+wait = WebDriverWait(browser, 20)
+actions = ActionChains(browser)
+
+product_img_xpath = '//div[contains(@class,"s-item")]//img'
+wait.until(EC.visibility_of_element_located((By.XPATH, product_img_xpath)))
+time.sleep(1)
+
+imgs = browser.find_elements_by_xpath(product_img_xpath)
+for img in imgs:
+    actions.move_to_element(img).perform()
+    print(img.get_attribute('src'))
