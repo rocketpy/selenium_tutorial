@@ -104,15 +104,20 @@ finally:
 
 # disable images
 chrome_options = webdriver.ChromeOptions()
+
 prefs = {"profile.managed_default_content_settings.images": 2}
-chrome_options.add_experimental_option("prefs", prefs)
-driver = webdriver.Chrome(chrome_options=chrome_options)
 
 chrome_options.add_experimental_option("prefs", prefs)
 driver = webdriver.Chrome(chrome_options=chrome_options)
+
 
 # get image src
 driver.find_element_by_id("element_id").get_attribute("src")
+
+# or
+image = driver.find_element(By.XPATH, value='//*[@id="app"]//div[1]/img')
+print(image.get_attribute("scr"))
+
 
 wait = WebDriverWait(browser, 20)
 actions = ActionChains(browser)
