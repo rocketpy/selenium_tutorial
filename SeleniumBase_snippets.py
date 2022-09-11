@@ -33,6 +33,12 @@ self.save_screenshot(FILE_NAME)  # Save a screenshot of the current page
 # pytest test_suite.py --dashboard --html=report.html
 
 
+# find all links on the page
+links = driver.find_elements_by_xpath("//a[@href]")
+for link in links:
+    print(elem.get_attribute("href"))
+
+
 #  example , test login
 from seleniumbase import BaseCase
 
