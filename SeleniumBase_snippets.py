@@ -37,6 +37,11 @@ self.save_screenshot(FILE_NAME)  # Save a screenshot of the current page
 links = driver.find_elements_by_xpath("//a[@href]")
 for link in links:
     print(elem.get_attribute("href"))
+    
+    
+# click on the alert box
+WebDriverWait(driver, 10).until(EC.alert_is_present())
+driver.switch_to.alert.accept()
 
 
 #  example , test login
