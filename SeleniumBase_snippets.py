@@ -44,9 +44,19 @@ WebDriverWait(driver, 10).until(EC.alert_is_present())
 driver.switch_to.alert.accept()
 
 
+# read cookies
+import pickle
+import selenium.webdriver 
+
+driver = selenium.webdriver.Firefox()
+driver.get("http://www...")
+cookies = pickle.load(open("cookies.pkl", "rb"))
+for cookie in cookies:
+    driver.add_cookie(cookie)
+
+
 #  example , test login
 from seleniumbase import BaseCase
-
 
 class SwagLabsLoginTests(BaseCase):
 
