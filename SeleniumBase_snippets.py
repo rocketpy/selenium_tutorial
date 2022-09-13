@@ -44,6 +44,8 @@ WebDriverWait(driver, 10).until(EC.alert_is_present())
 driver.switch_to.alert.accept()
 
 
+# Cookies
+
 # read cookies
 import pickle
 import selenium.webdriver 
@@ -53,6 +55,14 @@ driver.get("http://www...")
 cookies = pickle.load(open("cookies.pkl", "rb"))
 for cookie in cookies:
     driver.add_cookie(cookie)
+    
+# save cookies 
+import pickle
+import selenium.webdriver 
+
+driver = selenium.webdriver.Firefox()
+driver.get("http://www...")
+pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
 
 
 #  example , test login
