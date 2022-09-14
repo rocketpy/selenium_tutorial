@@ -56,6 +56,16 @@ cookies = pickle.load(open("cookies.pkl", "rb"))
 for cookie in cookies:
     driver.add_cookie(cookie)
     
+# or
+
+driver = selenium.webdriver.Firefox()
+driver.get("http://www...")
+cookies = pickle.load(open("cookies.pkl", "rb"))
+for cookie in cookies:
+    cookie.pop('same_site')
+    driver.add_cookie(cook)               
+    driver.refresh()
+    
 # save cookies 
 import pickle
 import selenium.webdriver 
