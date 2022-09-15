@@ -75,19 +75,24 @@ driver.get("http://www...")
 pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
 
 
-# 
+# scrape multiple pages
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
   
-element_list = []
+result_list = []
   
-for page in range(1, 3, 1):
+for page in range(1, 5, 1):
     page_url = "https://www.../?page=" + str(page)
     driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.get(page_url)
     title = driver.find_elements_by_class_name("title")
     price = driver.find_elements_by_class_name("price")
     description = driver.find_elements_by_class_name("description")
+    
+    for i in range(len(title)):
+        result_list.append([title[i].text, price[i].text, description[i].text)
+
+driver.close()
 
 
 #  example , test login
