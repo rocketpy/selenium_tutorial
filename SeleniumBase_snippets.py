@@ -75,6 +75,21 @@ driver.get("http://www...")
 pickle.dump( driver.get_cookies() , open("cookies.pkl","wb"))
 
 
+# 
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+  
+element_list = []
+  
+for page in range(1, 3, 1):
+    page_url = "https://www.../?page=" + str(page)
+    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver.get(page_url)
+    title = driver.find_elements_by_class_name("title")
+    price = driver.find_elements_by_class_name("price")
+    description = driver.find_elements_by_class_name("description")
+
+
 #  example , test login
 from seleniumbase import BaseCase
 
