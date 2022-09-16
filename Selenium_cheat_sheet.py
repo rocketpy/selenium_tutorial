@@ -14,6 +14,7 @@ iedriver = webdriver.IE(executable_path="Path to IEDriverServer.exe")
 
 edgedriver = webdriver.Edge(executable_path="Path to MicrosoftWebDriver.exe")
 # link to driver  "https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/"
+# webdriver.Edge(executable_path = 'C:\\Users\\Downloads\\edgedriver_win32\\msedgedriver.exe')
 
 operadriver = webdriver.Opera(executable_path="Path to operadriver")
 # link to driver  "https://github.com/operasoftware/operachromiumdriver/releases"
