@@ -20,3 +20,11 @@ from selenium import webdriver
 firefox_options = webdriver.FirefoxOptions()
 firefox_options.add_argument("--private")
 browser = webdriver.Firefox(firefox_options=firefox_options)
+
+
+# for Opera
+from selenium import webdriver
+
+options =  webdriver.opera.webdriver.Options()
+options.add_argument("private")
+driver = webdriver.Opera(executable_path="operadriver",options=options)
