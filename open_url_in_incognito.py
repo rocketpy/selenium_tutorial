@@ -16,6 +16,7 @@ driver.get("https://www.....com")
 
 # for Firefox
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 
 firefox_options = webdriver.FirefoxOptions()
 firefox_options.add_argument("--private")
@@ -28,3 +29,11 @@ from selenium import webdriver
 options =  webdriver.opera.webdriver.Options()
 options.add_argument("private")
 driver = webdriver.Opera(executable_path="operadriver",options=options)
+
+# or
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+
+firefox_options = Options()
+firefox_options.add_argument("-private")
+driver = webdriver.Firefox(options=firefox_options)
