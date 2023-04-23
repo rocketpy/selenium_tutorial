@@ -30,3 +30,12 @@ def start_todo_app():
     web_driver = webdriver.Remote(command_executor = remote_url, desired_capabilities = browser_capabilities)
     web_driver.get('https://accounts.hey.com/login')
     web_driver.maximize_window()
+
+
+
+# Example 2
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.relative_locator import locate_with
+
+password_field = driver.find_element(By.ID, "password")
+email_address_field = driver.find_element(locate_with(By.TAG_NAME,  "input").above(password_field))
