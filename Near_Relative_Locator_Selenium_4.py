@@ -33,9 +33,14 @@ def start_todo_app():
 
 
 
-# Example 2
+# Example 2 Above
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.relative_locator import locate_with
 
 password_field = driver.find_element(By.ID, "password")
 email_address_field = driver.find_element(locate_with(By.TAG_NAME,  "input").above(password_field))
+
+
+# Example 3 Below
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.relative_locator import locate_with
