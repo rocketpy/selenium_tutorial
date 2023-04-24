@@ -30,6 +30,21 @@ def start_todo_app():
     web_driver = webdriver.Remote(command_executor = remote_url, desired_capabilities = browser_capabilities)
     web_driver.get('https://accounts.hey.com/login')
     web_driver.maximize_window()
+    elem_label = web_driver.find_element(By.CSS_SELECTOR,".orsignup")
+    elementBox = web_driver.find_elements(with_tag_name("input").below(elem_label))
+
+    for items in elementBox:
+        # print(items.get_attribute('name'))
+        elem_name = items.get_attribute('name')
+        if (elem_name == "email"):
+            # print("Inside Email Address")
+            web_driver.find_element(By.NAME, elem_name).send_keys("Email@gmail.com")
+        
+        if (elem_name == "password"):
+            # print("Inside Password")
+            web_driver.find_element(By.NAME, elem_name).send_keys("Himanshu1!")
+            web_driver.find_element(By.XPATH, "//span[@class='input-group-text password-group-text']").click()
+            break
 
 
 
