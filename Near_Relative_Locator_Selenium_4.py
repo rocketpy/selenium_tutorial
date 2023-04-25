@@ -45,6 +45,20 @@ def start_todo_app():
             web_driver.find_element(By.NAME, elem_name).send_keys("Himanshu1!")
             web_driver.find_element(By.XPATH, "//span[@class='input-group-text password-group-text']").click()
             break
+    
+    sleep(3)
+    web_driver.find_element(By.CSS_SELECTOR, ".btn").click()
+    sleep(3)
+    window_title = web_driver.title
+    # print(window_title)
+    expected_title = "Welcome"
+    if expected_title in window_title:
+        print("Login successful")
+    else:
+        print("Login not successful")
+    print("Relative Locators in Selenium 4 on LambdaTest Login Page complete")
+
+    web_driver.quit()
 
 
 
