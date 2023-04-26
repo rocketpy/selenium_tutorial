@@ -73,3 +73,15 @@ email_address_field = driver.find_element(locate_with(By.TAG_NAME,  "input").abo
 # Example 3 Below
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.relative_locator import locate_with
+
+emailAddressField = driver.find_element(By.ID, "email")
+passwordField = driver.find_element(locate_with(By.TAG_NAME, "input").below(emailAddressField))
+
+
+# Example 4 To the Left Of
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.relative_locator import locate_with
+
+submitButton = driver.find_element(By.ID, "submit")
+cancelButton = driver.find_element(locate_with(By.TAG_NAME, "button").
+                               	to_left_of(submitButton))
