@@ -85,3 +85,11 @@ from selenium.webdriver.support.relative_locator import locate_with
 submitButton = driver.find_element(By.ID, "submit")
 cancelButton = driver.find_element(locate_with(By.TAG_NAME, "button").
                                	to_left_of(submitButton))
+
+# To the Right Of
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.relative_locator import locate_with
+
+cancelButton = driver.find_element(By.ID, "cancel")
+submitButton = driver.find_element(locate_with(By.TAG_NAME, "button").
+                               	to_right_of(cancelButton))
