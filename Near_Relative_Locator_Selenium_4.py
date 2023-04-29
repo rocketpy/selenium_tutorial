@@ -61,6 +61,30 @@ def start_todo_app():
     web_driver.quit()
 
 
+# Relative Locators
+import sys
+import json
+import time
+import pytest
+import urllib3
+import warnings
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.relative_locator import with_tag_name
+
+browser_capabilities = {
+        "user" : "user.name",
+        "accessKey" : "Access-Key",
+        "build" : "[Python] - Relative Locators in Selenium 4 on Login Page",
+        "name" : "[Python] - Relative Locators in Selenium 4 on Login Page",
+        "platformName" : "OS X Mavericks",
+        "browserName" : "Chrome",
+        "browserVersion" : "67.0"
+}
+
+
 
 # Example 2 Above
 from selenium.webdriver.common.by import By
