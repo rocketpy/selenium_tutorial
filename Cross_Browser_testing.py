@@ -6,6 +6,10 @@ from selenium.webdriver.common.by import By
 class CrossBrowserTest(unittest.TestCase):
 
     def setUp(self):
+        username = os.environ.get('USERNAME')
+        access_key = os.environ.get('ACCESS_KEY')
+        caps = webdriver.ChromeOptions()
+
         # self.driver = webdriver.Safari()
         # self.driver = webdriver.Edge()
         # self.driver = webdriver.Firefox()
